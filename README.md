@@ -3,6 +3,10 @@
 This is a proof of concept with OWIN for a small application and IdentityServer
 or alternatively Hawk for authentication on mono.
 
+## Trying it out
+
+Run `./run`
+
 ## References
 
  - https://github.com/mono/mono/tree/mono-3.12.0-branch
