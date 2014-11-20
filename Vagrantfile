@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 yum update -y
 yum install -y rpm-build git glib2-devel libpng-devel libjpeg-tubo-devel \
   giflib-devel libtiff-devel libexif-devel libX11-devel fontconfig-devel \
-  pcre-devel zlib-devel openssl-devel
+  pcre-devel zlib-devel openssl-devel autoconf libtool automake g++
 EOF
 
   compile_mono = <<EOF
