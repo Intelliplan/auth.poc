@@ -1,0 +1,3 @@
+[submodule "app/vendor/freya"]
+	path = app/vendor/freya
+	url = https://github.com/kolektiv/freya.git
