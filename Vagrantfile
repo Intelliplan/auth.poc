@@ -16,10 +16,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 yum update -y
 yum install -y rpm-build git glib2-devel libpng-devel libjpeg-tubo-devel \
   giflib-devel libtiff-devel libexif-devel libX11-devel fontconfig-devel \
-  pcre-devel zlib-devel openssl-devel autoconf libtool automake g++
+  pcre-devel zlib-devel openssl-devel
+yum groupinstall -y 'Development Tools'
 EOF
 
-  compile_mono = <<EOF
+  compile_mono = %{
 [[ -d mono ]] || git clone https://github.com/mono/mono.git -b mono-3.12.0-branch
 cd mono
 [[ -f wrapper.sh ]] || echo <<WRAP >wrapper.sh
@@ -30,8 +31,10 @@ exec $*
 WRAP
 chmod +x wrapper.sh
 ./autogen.sh --prefix=/usr/local
+./wrapper.sh /usr/bin/make get-monolite-latest
 ./wrapper.sh /usr/bin/make
-EOF
+./wrapper.sh /usr/bin/make install
+}
   config.vm.provision :shell, inline: script
   config.vm.provision :shell, inline: compile_mono
 end
