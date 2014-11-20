@@ -32,7 +32,6 @@ chmod +x wrapper.sh
 ./autogen.sh --prefix=/usr/local
 ./wrapper.sh /usr/bin/make
 EOF
-
   config.vm.provision :shell, inline: script
   config.vm.provision :shell, inline: compile_mono
 end
