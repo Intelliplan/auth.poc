@@ -7,6 +7,6 @@ open Microsoft.Owin.Hosting
 
 [<EntryPoint>]
 let main _ = 
-    let _ = WebApp.Start<TodoBackend> ("http://localhost:7000")
-    let _ = System.Console.ReadLine ()
-    0
+  let _ = WebApp.Start<TodoBackend> ("http://localhost:7000")
+  let _ = System.Console.ReadLine ()
+  0

@@ -1244,4 +1244,7 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="idsrv3test.pfx" />
+  </ItemGroup>
 </Project>
