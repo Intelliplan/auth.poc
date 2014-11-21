@@ -1,1 +1,6 @@
 .vagrant/
+*.suo
+bin/
+obj/
+packages/
+bin/
