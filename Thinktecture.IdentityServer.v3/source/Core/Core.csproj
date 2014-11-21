@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB9E026E-BAB3-498A-A954-B93B05C146A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Thinktecture.IdentityServer.Core</RootNamespace>
+    <AssemblyName>Thinktecture.IdentityServer.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Thinktecture.IdentityServer.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Thinktecture.IdentityServer.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AzureWebSites|AnyCPU'">
+    <OutputPath>bin\AzureWebSites\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\build\Thinktecture.IdentityServer.Core.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.0\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.0\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.2\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Core">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.2.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionAssemblyInfo.cs">
+      <Link>Properties\VersionAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\Endpoints.cs" />
+    <Compile Include="Results\LogoutResult.cs" />
+    <Compile Include="Configuration\Hosting\MessageCookie.cs" />
+    <Compile Include="Models\SignOutMessage.cs" />
+    <Compile Include="Configuration\CspOptions.cs" />
+    <Compile Include="Configuration\Hosting\DataProtectorAdapter.cs" />
+    <Compile Include="Endpoints\ClientPermissionsController.cs" />
+    <Compile Include="Endpoints\Connect\IdentityTokenValidationController.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\NopClaimsFilter.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\ClaimsFilterBase.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\NormalizingClaimsFilter.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\AggregateExternalClaimsFilter.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\ExternalClaimsFilterUserService.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\FacebookClaimsFilter.cs" />
+    <Compile Include="ViewModels\RevokeClientPermission.cs" />
+    <Compile Include="ResponseHandling\EndSessionResponseGenerator.cs" />
+    <Compile Include="Results\AuthorizeFormPostResult.cs" />
+    <Compile Include="Results\AuthorizeRedirectResult.cs" />
+    <Compile Include="Validation\EndSessionRequestValidator.cs" />
+    <Compile Include="Validation\ValidatedEndSessionRequest.cs" />
+    <Compile Include="Validation\ValidatedRequest.cs" />
+    <Compile Include="Extensions\AuthorizeResponseExtensions.cs" />
+    <Compile Include="Extensions\ClaimListExtensions.cs" />
+    <Compile Include="Extensions\ValidatedAuthorizeRequestExtensions.cs" />
+    <Compile Include="Configuration\Hosting\PreventUnsupportedRequestMediaTypesAttribute.cs" />
+    <Compile Include="Configuration\Hosting\AntiForgeryTokenValidator.cs" />
+    <Compile Include="Configuration\Hosting\RequireSslMiddleware.cs" />
+    <Compile Include="Configuration\Hosting\ValidateAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Logging\LogProviders\TraceSourceLogProvider.cs" />
+    <Compile Include="Models\StandardScopes.cs" />
+    <Compile Include="Models\ClientPermission.cs" />
+    <Compile Include="Models\TokenCreationRequest.cs" />
+    <Compile Include="Resources\Scopes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Scopes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Default\AggregateConsentStore.cs" />
+    <Compile Include="Services\Default\DefaultClientPermissionsService.cs" />
+    <Compile Include="Services\Default\KeyHashingTransientDataRepository.cs" />
+    <Compile Include="Services\Default\TokenMetadataPermissionsStoreAdapter.cs" />
+    <Compile Include="Services\IClientPermissionsService.cs" />
+    <Compile Include="Services\IConsentStore.cs" />
+    <Compile Include="Services\InMemory\InMemoryConsentStore.cs" />
+    <Compile Include="Services\IPermissionStore.cs" />
+    <Compile Include="Results\ClientPermissionsActionResult.cs" />
+    <Compile Include="Results\ErrorActionResult.cs" />
+    <Compile Include="Results\HtmlActionResult.cs" />
+    <Compile Include="Services\DefaultViewService\AssetManager.cs" />
+    <Compile Include="Models\AuthenticateResult.cs" />
+    <Compile Include="Endpoints\AuthenticationController.cs" />
+    <Compile Include="Results\LoginActionResult.cs" />
+    <Compile Include="Services\DefaultViewService\DefaultViewServiceRegistration.cs" />
+    <Compile Include="Services\DefaultViewService\FileSystemViewLoader.cs" />
+    <Compile Include="Services\DefaultViewService\EmbeddedAssetsViewLoader.cs" />
+    <Compile Include="Services\DefaultViewService\CachingLoader.cs" />
+    <Compile Include="Services\DefaultViewService\FileSystemWithEmbeddedFallbackViewLoader.cs" />
+    <Compile Include="Services\DefaultViewService\IViewLoader.cs" />
+    <Compile Include="Services\DefaultViewService\ResourceCache.cs" />
+    <Compile Include="ViewModels\AntiForgeryHiddenInputViewModel.cs" />
+    <Compile Include="ViewModels\LoggedOutViewModel.cs" />
+    <Compile Include="ViewModels\LogoutViewModel.cs" />
+    <Compile Include="ViewModels\ConsentScopeViewModel.cs" />
+    <Compile Include="ViewModels\ConsentViewModel.cs" />
+    <Compile Include="ViewModels\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\CommonViewModel.cs" />
+    <Compile Include="Results\LogoutActionResult.cs" />
+    <Compile Include="Results\LoggedOutActionResult.cs" />
+    <Compile Include="Results\ConsentActionResult.cs" />
+    <Compile Include="Results\HtmlStreamActionResult.cs" />
+    <Compile Include="ViewModels\LoginCredentials.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\ConfigureDataProtectorExtension.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\ConfigureIdentityServerBaseUrlExtension.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\ConfigureCookieAuthenticationExtension.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\UseCorsExtension.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\UseEmbeddedFileServerExtension.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\UseHstsExtension.cs" />
+    <Compile Include="Configuration\AppBuilderExtensions\UseIdentityServerExtension.cs" />
+    <Compile Include="Configuration\AuthenticationOptions.cs" />
+    <Compile Include="Configuration\Hosting\AutofacConfig.cs" />
+    <Compile Include="Configuration\CookieOptions.cs" />
+    <Compile Include="Configuration\CorsPolicy.cs" />
+    <Compile Include="Configuration\CorsPolicyProvider.cs" />
+    <Compile Include="Configuration\InMemoryFactory.cs" />
+    <Compile Include="Models\RefreshToken.cs" />
+    <Compile Include="Configuration\Registration.cs" />
+    <Compile Include="Extensions\OwinExtensions.cs" />
+    <Compile Include="Endpoints\CspReportController.cs" />
+    <Compile Include="Configuration\Hosting\NoCacheAttribute.cs" />
+    <Compile Include="Configuration\Hosting\SecurityHeadersAttribute.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="Services\Default\DefaultRefreshTokenService.cs" />
+    <Compile Include="Services\DefaultViewService\DefaultViewService.cs" />
+    <Compile Include="Services\IRefreshTokenService.cs" />
+    <Compile Include="Services\IRefreshTokenStore.cs" />
+    <Compile Include="Services\Default\DefaultTokenSigningService.cs" />
+    <Compile Include="Services\ITokenSigningService.cs" />
+    <Compile Include="Configuration\Hosting\AutofacContainerMiddleware.cs" />
+    <Compile Include="Configuration\Hosting\AutofacScope.cs" />
+    <Compile Include="Configuration\EndpointSettings.cs" />
+    <Compile Include="Configuration\HostDataProtector.cs" />
+    <Compile Include="Configuration\IDataProtector.cs" />
+    <Compile Include="Configuration\IdentityServerOptions.cs" />
+    <Compile Include="Configuration\IdentityServerServiceFactory.cs" />
+    <Compile Include="Configuration\Hosting\KatanaDependencyResolver.cs" />
+    <Compile Include="Configuration\Hosting\WebApiConfig.cs" />
+    <Compile Include="Endpoints\Connect\AccessTokenValidationController.cs" />
+    <Compile Include="Endpoints\Connect\DiscoveryEndpointController.cs" />
+    <Compile Include="Endpoints\Connect\EndSessionController.cs" />
+    <Compile Include="Endpoints\Connect\UserInfoEndpointController.cs" />
+    <Compile Include="Models\AuthorizationCode.cs" />
+    <Compile Include="Models\ConsentError.cs" />
+    <Compile Include="Models\ClientCredential.cs" />
+    <Compile Include="Models\UserConsent.cs" />
+    <Compile Include="ResponseHandling\UserInfoResponseGenerator.cs" />
+    <Compile Include="Results\ProtectedResourceErrorResult.cs" />
+    <Compile Include="Results\UserInfoResult.cs" />
+    <Compile Include="Services\Default\DefaultAssertionGrantValidator.cs" />
+    <Compile Include="Services\Default\DefaultCustomRequestValidator.cs" />
+    <Compile Include="Services\Default\DefaultCustomTokenValidator.cs" />
+    <Compile Include="Services\Default\DefaultTokenService.cs" />
+    <Compile Include="Services\Default\DefaultClaimsProvider.cs" />
+    <Compile Include="Services\ICustomGrantValidator.cs" />
+    <Compile Include="Services\IClaimsProvider.cs" />
+    <Compile Include="Services\ICustomRequestValidator.cs" />
+    <Compile Include="Services\ICustomTokenValidator.cs" />
+    <Compile Include="Services\ITransientDataRepository.cs" />
+    <Compile Include="Validation\ClientValidator.cs" />
+    <Compile Include="Validation\ScopeValidator.cs" />
+    <Compile Include="Validation\TokenValidationResult.cs" />
+    <Compile Include="Validation\TokenValidator.cs" />
+    <Compile Include="Validation\ValidatedUserInfoRequest.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\HttpRequestMessageExtensions.cs" />
+    <Compile Include="Extensions\IDataProtectorExtensions.cs" />
+    <Compile Include="Extensions\ModelStateDictionaryExtensions.cs" />
+    <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
+    <Compile Include="Extensions\ScopeExtensions.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\ILogExtensions.cs" />
+    <Compile Include="Logging\ILogProvider.cs" />
+    <Compile Include="Logging\LoggerExecutionWrapper.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogProvider.cs" />
+    <Compile Include="Logging\LogProviders\DiagnosticsTraceLogProvider.cs" />
+    <Compile Include="Logging\LogProviders\Log4NetLogProvider.cs" />
+    <Compile Include="Logging\LogProviders\NLogLogProvider.cs" />
+    <Compile Include="Models\Consent.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\ExternalIdentity.cs" />
+    <Compile Include="Extensions\PrincipalExtensions.cs" />
+    <Compile Include="Configuration\Hosting\ClaimMap.cs" />
+    <Compile Include="Configuration\Hosting\ErrorPageFilterAttribute.cs" />
+    <Compile Include="Configuration\Hosting\LogProviderExceptionLogger.cs" />
+    <Compile Include="IdentityServerPrincipal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\AuthorizeError.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Endpoints\Connect\AuthorizeEndpointController.cs" />
+    <Compile Include="Endpoints\Connect\TokenEndpointController.cs" />
+    <Compile Include="Models\InteractionResponse.cs" />
+    <Compile Include="ResponseHandling\AuthorizeInteractionResponseGenerator.cs" />
+    <Compile Include="Models\AuthorizeResponse.cs" />
+    <Compile Include="ResponseHandling\AuthorizeResponseGenerator.cs" />
+    <Compile Include="Models\TokenResponse.cs" />
+    <Compile Include="ResponseHandling\TokenResponseGenerator.cs" />
+    <Compile Include="Results\LoginResult.cs" />
+    <Compile Include="Results\TokenErrorResult.cs" />
+    <Compile Include="Results\TokenResult.cs" />
+    <Compile Include="Results\ResultExtensions.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\IAuthorizationCodeStore.cs" />
+    <Compile Include="Services\ExternalClaimsFilter\TwitterClaimsFilter.cs" />
+    <Compile Include="Services\IClientStore.cs" />
+    <Compile Include="Services\InMemory\InMemoryRefreshTokenStore.cs" />
+    <Compile Include="Services\IExternalClaimsFilter.cs" />
+    <Compile Include="Services\IConsentService.cs" />
+    <Compile Include="Services\ITokenService.cs" />
+    <Compile Include="Services\InMemory\InMemoryAuthorizationCodeStore.cs" />
+    <Compile Include="Services\InMemory\InMemoryClientStore.cs" />
+    <Compile Include="Services\Default\DefaultConsentService.cs" />
+    <Compile Include="Services\InMemory\InMemoryScopeStore.cs" />
+    <Compile Include="Services\InMemory\InMemoryTokenHandleStore.cs" />
+    <Compile Include="Services\InMemory\InMemoryUser.cs" />
+    <Compile Include="Services\InMemory\InMemoryUserService.cs" />
+    <Compile Include="Services\IScopeStore.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\ITokenHandleStore.cs" />
+    <Compile Include="Models\Scope.cs" />
+    <Compile Include="Models\ScopeClaim.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Validation\AuthorizeRequestValidator.cs" />
+    <Compile Include="Validation\TokenRequestValidator.cs" />
+    <Compile Include="Validation\ValidatedAuthorizeRequest.cs" />
+    <Compile Include="Validation\ValidatedTokenRequest.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Models\SignInMessage.cs" />
+    <Compile Include="Extensions\StringsExtensions.cs" />
+    <Compile Include="Services\IViewService.cs" />
+    <Compile Include="ViewModels\ClientPermissionsViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\default.licenseheader">
+      <Link>default.licenseheader</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\custom.less" />
+    <EmbeddedResource Include="Resources\Scopes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Scopes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\libs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\alerts.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\badges.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\bootstrap.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\breadcrumbs.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\button-groups.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\buttons.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\carousel.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\close.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\code.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\component-animations.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\dropdowns.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\forms.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\glyphicons.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\grid.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\input-groups.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\jumbotron.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\labels.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\list-group.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\media.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\mixins.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\modals.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\navbar.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\navs.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\normalize.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\pager.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\pagination.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\panels.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\popovers.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\print.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\progress-bars.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\responsive-utilities.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\scaffolding.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\tables.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\theme.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\thumbnails.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\tooltip.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\type.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\utilities.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\variables.less" />
+    <None Include="Services\DefaultViewService\Assets\libs\bootstrap\less\wells.less" />
+    <None Include="Services\DefaultViewService\Assets\scripts.js.bundle" />
+    <None Include="Services\DefaultViewService\Assets\scripts.min.js.map">
+      <DependentUpon>scripts.min.js</DependentUpon>
+    </None>
+    <None Include="Services\DefaultViewService\Assets\styles.css.bundle" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\FormPostResponse.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Services\DefaultViewService\Assets\app\app.less" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\FormPostResponse.js" />
+    <Content Include="Services\DefaultViewService\Assets\app\app.css">
+      <DependentUpon>app.less</DependentUpon>
+    </Content>
+    <Content Include="Services\DefaultViewService\Assets\app\app.js" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\consent.html" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\layout.html" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\login.html" />
+    <Content Include="Services\DefaultViewService\Assets\app\app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\loggedOut.html" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\error.html" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\logout.html" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\app\permissions.html" />
+    <Content Include="Services\DefaultViewService\Assets\libs\angular\angular.1.2.13.js" />
+    <Content Include="Services\DefaultViewService\Assets\libs\angular\angular.1.2.13.min.js" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\css\bootstrap.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\custom.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\custom.min.css" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\libs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\js\bootstrap.js" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\less\bootstrap.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\bootstrap\less\bootstrap.min.css" />
+    <Content Include="Services\DefaultViewService\Assets\libs\jquery\jquery-1.11.0.js" />
+    <Content Include="Services\DefaultViewService\Assets\libs\jquery\jquery-1.11.0.min.js" />
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\scripts.js">
+      <DependentUpon>scripts.js.bundle</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Services\DefaultViewService\Assets\scripts.min.js">
+      <DependentUpon>scripts.js</DependentUpon>
+    </Content>
+    <Content Include="Services\DefaultViewService\Assets\styles.css">
+      <DependentUpon>styles.css.bundle</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Services\DefaultViewService\Assets\styles.min.css">
+      <DependentUpon>styles.css</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
