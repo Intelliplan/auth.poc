@@ -43,43 +43,42 @@ namespace OwinConsole
 		}
 	}
 
-	class Application{
-		public Dictionary<string,object> Properties{
-			get{
-				return new Dictionary<string,object> {
-					{ "host.AppName", "OwinConsole" }
-				};
-			}
-		}
-	}
-
-	class MainClass
+	public class IntelliplanPoC
 	{
-		Application app = new Application();
-
-		public void Configuration(IAppBuilder appBuilder)
+		public void Configuration(IAppBuilder app)
 		{
-			appBuilder.SetDataProtectionProvider(new MonoDataProtectionProvider(app.Properties["host.AppName"] as string));
+            app.SetDataProtectionProvider(new MonoDataProtectionProvider("IntelliplanPoC"));
 
-			var factory = InMemoryFactory.Create(
-				users:   Users.Get(),
-				clients: Clients.Get(),
-				scopes:  Scopes.Get());
+            var factory = InMemoryFactory.Create(
+                users:   Users.Get(),
+                clients: Clients.Get(),
+                scopes:  Scopes.Get());
 
-			var options = new IdentityServerOptions
-			{
-				IssuerUri = "https://idsrv3.com",
-				SiteName = "Thinktecture IdentityServer v3",
-				SigningCertificate = Certificate.Get(),
-				Factory = factory,
-			};
+            var idsrvOptions = new IdentityServerOptions
+            {
+                IssuerUri = "https://sts.intelliplan.eu",
+                SiteName = "Thinktecture IdentityServer v3",
+                Factory = factory,
+                SigningCertificate = Certificate.Get(),
 
-			appBuilder.UseIdentityServer(options);
+                CorsPolicy = CorsPolicy.AllowAll,
+                CspOptions = new CspOptions 
+                {
+                    ReportEndpoint = EndpointSettings.Enabled,
+                },
+
+                AuthenticationOptions = new AuthenticationOptions 
+                {
+                    IdentityProviders = ConfigureIdentityProviders,
+                }
+            };
+
+            app.UseIdentityServer(idsrvOptions);
+
+            // only for showing the getting started index page
+            app.UseStaticFiles();
 		}
-
-		public static void Main (string[] args)
-		{
-			Console.WriteLine ("Hello World!");
-		}
+        public static void ConfigureIdentityProviders(IAppBuilder app, string signInAsType){
+        }
 	}
 }

@@ -9,7 +9,7 @@ Albacore::Tasks::Versionizer.new :versioning
 desc 'Perform fast compilation (warn: doesn\'t d/l deps)'
 build :quick_compile do |b|
   b.logging = 'detailed'
-  b.sln     = 'auth.poc.sln'
+  b.sln     = 'app/auth.poc.sln'
 end
 
 desc 'restore all nugets as per the packages.config files'
@@ -20,7 +20,7 @@ end
 
 desc 'Perform full compilation'
 build :compile => [:versioning, :restore] do |b|
-  b.sln = 'auth.poc.sln'
+  b.sln = 'app/auth.poc.sln'
 end
 
 task :default => :compile

@@ -21,6 +21,6 @@ Global
 		{CD9DFEBF-C2E0-45E9-A47F-0EE428981F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = src\Freya.Todo.Backend.fsproj
+		StartupItem = ..\idp.host\idp.host.fsproj
 	EndGlobalSection
 EndGlobal
