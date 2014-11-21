@@ -1,0 +1,15 @@
+Microsoft.AspNet.Cors
+Microsoft.AspNet.WebApi.Client
+Microsoft.AspNet.WebApi.Core
+Microsoft.Owin
+Microsoft.Owin.Cors
+Microsoft.Owin.Hosting
+Microsoft.Owin.Security
+Microsoft.Owin.Security.Cookies
+Microsoft.Owin.Security.Google
+Microsoft.Owin.Testing
+Moq
+Newtonsoft.Json
+Owin
+System.IdentityModel.Tokens.Jwt
+Thinktecture.IdentityModel.Core

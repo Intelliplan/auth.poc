@@ -1,0 +1,15 @@
+Microsoft.IdentityModel.Protocol.Extensions
+Microsoft.Owin
+Microsoft.Owin.FileSystems
+Microsoft.Owin.Host.SystemWeb
+Microsoft.Owin.Security
+Microsoft.Owin.Security.Cookies
+Microsoft.Owin.Security.Facebook
+Microsoft.Owin.Security.Google
+Microsoft.Owin.Security.OpenIdConnect
+Microsoft.Owin.Security.Twitter
+Microsoft.Owin.Security.WsFederation
+Microsoft.Owin.StaticFiles
+Newtonsoft.Json
+Owin
+System.IdentityModel.Tokens.Jwt

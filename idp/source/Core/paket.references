@@ -1,0 +1,17 @@
+Autofac
+Autofac.WebApi2
+ILMerge
+Microsoft.AspNet.Cors
+Microsoft.AspNet.WebApi.Client
+Microsoft.AspNet.WebApi.Core
+Microsoft.AspNet.WebApi.Owin
+Microsoft.Owin
+Microsoft.Owin.Cors
+Microsoft.Owin.FileSystems
+Microsoft.Owin.Security
+Microsoft.Owin.Security.Cookies
+Microsoft.Owin.StaticFiles
+Newtonsoft.Json
+Owin
+System.IdentityModel.Tokens.Jwt
+Thinktecture.IdentityModel.Core

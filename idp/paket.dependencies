@@ -1,0 +1,30 @@
+source https://www.nuget.org/api/v2/
+
+nuget Autofac 3.5.2
+nuget Autofac.WebApi2 3.4.0
+nuget ILMerge 2.13.0307
+nuget Microsoft.AspNet.Cors 5.2.2
+nuget Microsoft.AspNet.WebApi.Client 5.2.2
+nuget Microsoft.AspNet.WebApi.Core 5.2.2
+nuget Microsoft.AspNet.WebApi.Owin 5.2.2
+nuget Microsoft.IdentityModel.Protocol.Extensions 1.0.0
+nuget Microsoft.Owin 3.0.0
+nuget Microsoft.Owin.Cors 3.0.0
+nuget Microsoft.Owin.FileSystems 3.0.0
+nuget Microsoft.Owin.Host.SystemWeb 3.0.0
+nuget Microsoft.Owin.Hosting 3.0.0
+nuget Microsoft.Owin.Security 3.0.0
+nuget Microsoft.Owin.Security.Cookies 3.0.0
+nuget Microsoft.Owin.Security.Facebook 3.0.0
+nuget Microsoft.Owin.Security.Google 3.0.0
+nuget Microsoft.Owin.Security.OpenIdConnect 3.0.0
+nuget Microsoft.Owin.Security.Twitter 3.0.0
+nuget Microsoft.Owin.Security.WsFederation 3.0.0
+nuget Microsoft.Owin.StaticFiles 3.0.0
+nuget Microsoft.Owin.Testing 3.0.0
+nuget Moq 4.2.1409.1722
+nuget Newtonsoft.Json 6.0.5
+nuget Owin 1.0
+nuget psake 4.3.2
+nuget System.IdentityModel.Tokens.Jwt 4.0.0
+nuget Thinktecture.IdentityModel.Core 1.2.0
